@@ -1,7 +1,12 @@
+import useSwitch from "./components/useSwitch";
+
 export default function App() {
+  const [isOn, toggle] = useSwitch();
+
   return (
-    <>
-      <h1>Custom Hooks</h1>
-    </>
-  )
+    <div className="container">
+      <h1>Il valore è: {isOn ? "ON" : "OFF"}</h1>
+      <button onClick={toggle}>Cambia Stato</button>
+    </div>
+  );
 }
